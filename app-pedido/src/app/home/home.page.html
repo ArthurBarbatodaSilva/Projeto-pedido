@@ -13,7 +13,7 @@
     </ion-row>
   </div>
   <div>  
-  <ion-segment (ionChange) = "filtrarProdutos($event)">
+  <ion-segment class="segment" (ionChange) = "filtrarProdutos($event)">
     <ion-segment-button value="Hamburguer">
         <ion-label>Hamburguer</ion-label>
     </ion-segment-button>
@@ -32,14 +32,20 @@
   
 
   <ion-card *ngFor="let item of items; let ix = index" >
+    
     <ion-img [src]="pathImgs + item.imagem"></ion-img>
     <ion-card-header>
       <ion-card-title class="ion-text-center">{{item.nome}}</ion-card-title>
-      <ion-card-subtitle class="valor">{{item.valor}}</ion-card-subtitle>
+      <ion-card-subtitle class="valor">R${{item.valor}}</ion-card-subtitle>
     </ion-card-header>
     <ion-row><ion-col class="detalhes">Detalhes</ion-col></ion-row>
     
-
   </ion-card>
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button>
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
