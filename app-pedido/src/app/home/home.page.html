@@ -13,21 +13,33 @@
     </ion-row>
   </div>
   <div>  
-  <ion-row class="slide">
-      <ion-slides>
-        <ion-slide>hamburgers</ion-slide>
-        <ion-slide>Salgados</ion-slide>
-        <ion-slide>Bebidas</ion-slide>
-      </ion-slides>
-    </ion-row>
+  <ion-segment (ionChange) = "filtrarProdutos($event)">
+    <ion-segment-button value="Hamburguer">
+        <ion-label>Hamburguer</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Salgados">
+      <ion-label>Salgados</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="Bebidas">
+    <ion-label>Bebidas</ion-label>
+</ion-segment-button>
+  </ion-segment>
   </div>
    
 </ion-header>
 
 <ion-content [fullscreen]="true">
   
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  <ion-card *ngFor="let item of items; let ix = index" >
+    <ion-img [src]="pathImgs + item.imagem"></ion-img>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">{{item.nome}}</ion-card-title>
+      <ion-card-subtitle class="valor">{{item.valor}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-row><ion-col class="detalhes">Detalhes</ion-col></ion-row>
+    
+
+  </ion-card>
+
 </ion-content>
