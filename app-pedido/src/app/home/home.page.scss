@@ -38,17 +38,31 @@
   font-size: 20px;
   color: rgb(13, 138, 160);
 }
-.slide{
+.segment{
   background-color: rgb(13, 138, 160);
-  font-size: 25px;
 }
 
-.detalhes{
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #4CAF50;
-  color: white;
-  font-weight: bold;
+.nomeComida{
   text-align: center;
+  color: black;
+}
+
+.valor{
+  text-align: center;
+}
+
+
+.detalhes{
+  background: #0066A2;
+	color: white;
+	border-radius: 4px;
+	border-color: #0066A2;
+	height: 30px;
+	width: 60px;
+  text-align: center;
+}
+
+.footer{
+  background-color: rgb(13, 138, 160);
+  text-align: end;
 }

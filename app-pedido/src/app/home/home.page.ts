@@ -1,3 +1,4 @@
+import { DetalhesPage } from './../detalhes/detalhes.page';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
@@ -17,12 +18,12 @@ export class HomePage {
 
   items: any[] = [];
   public produtos = [
-    {categoria:'Hamburguer',id : 1, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'Burgão1' , valor:12.50, imagem:['Hamburger.jpg'], status: false},
-    {categoria:'Hamburguer',id : 2, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'Burgão2' , valor:10.00, imagem:['Hamburger.jpg'], status: false},
-    {categoria:'Salgados',id : 3, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'salgado1' , valor:8.00, imagem:['Salgado.jpg'], status: false},
-    {categoria:'Salgados',id : 4, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'salgado2' , valor:7.00, imagem:['Salgado.jpg'], status: false},
-    {categoria:'Bebidas',id : 5, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'bebida1' , valor:3.50, imagem:['Bebida.jpg'], status: false},
-    {categoria:'Bebidas',id : 6, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'bebida2' , valor:3.50, imagem:['Bebida.jpg'], status: false},
+    {categoria:'Hamburguer',id : 1, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'X-Bacon' , valor:9.99, imagem:['Hamburguer1.jpeg'], status: false},
+    {categoria:'Hamburguer',id : 2, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'X-salada' , valor:9.99, imagem:['Hamburguer1.jpeg'], status: false},
+    {categoria:'Salgados',id : 3, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'Coxinha' , valor:9.99, imagem:['salgado2.jpeg'], status: false},
+    {categoria:'Salgados',id : 4, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'Coxinha' , valor:9.99, imagem:['salgado2.jpeg'], status: false},
+    {categoria:'Bebidas',id : 5, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'Coca-Cola' , valor:9.99, imagem:['Bebida.jpg'], status: false},
+    {categoria:'Bebidas',id : 6, detalhes :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',nome:'Coca-Cola' , valor:9.99, imagem:['Bebida.jpg'], status: false},
   ]
 
   public pathImgs = '../../assets/';
@@ -46,5 +47,9 @@ export class HomePage {
     }
   }
   
- 
+  public itemsdetails(items:any) {
+    this.navController.navigateForward('detalhes', {
+      queryParams: { items: items }
+    });
+  }
 }
