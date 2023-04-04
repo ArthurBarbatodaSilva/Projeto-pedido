@@ -1,6 +1,12 @@
 <ion-header>
   <div class="header">  
     <ion-row>
+      <ion-col>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      </ion-col>
+
       <ion-col class="ion-text-center">
         <ion-title>{{item.nome}}</ion-title>
       </ion-col>
@@ -12,11 +18,11 @@
   
   <ion-row size="12">
     <ion-col *ngFor="let imagem of item.imagens; let ix = index">
-      <ion-img [src]="pathImgs + item.imagens"></ion-img>
+      <ion-img [src]="pathImgs + imagem"></ion-img>
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col size="12" class="">
+    <ion-col size="12">
       {{ item.detalhes }}
     </ion-col>
   </ion-row>
